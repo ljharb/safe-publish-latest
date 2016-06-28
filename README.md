@@ -6,9 +6,7 @@
 [![License][license-image]][license-url]
 [![Downloads][downloads-image]][downloads-url]
 
-[![npm badge][11]][1]
-
-[![browser support][9]][10]
+[![npm badge][9]][1]
 
 Ensure that when you `npm publish`, the "latest" tag is only set for the truly latest version.
 
@@ -48,9 +46,7 @@ Simply clone the repo, `npm install`, and run `npm test`
 [6]: https://david-dm.org/ljharb/safe-publish-latest
 [7]: https://david-dm.org/ljharb/safe-publish-latest/dev-status.svg
 [8]: https://david-dm.org/ljharb/safe-publish-latest#info=devDependencies
-[9]: https://ci.testling.com/ljharb/safe-publish-latest.png
-[10]: https://ci.testling.com/ljharb/safe-publish-latest
-[11]: https://nodei.co/npm/safe-publish-latest.png?downloads=true&stars=true
+[9]: https://nodei.co/npm/safe-publish-latest.png?downloads=true&stars=true
 [license-image]: http://img.shields.io/npm/l/safe-publish-latest.svg
 [license-url]: LICENSE
 [downloads-image]: http://img.shields.io/npm/dm/safe-publish-latest.svg
