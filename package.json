@@ -12,7 +12,7 @@
 	"description": "Ensure that when you `npm publish`, the \"latest\" tag is only set for the truly latest version.",
 	"license": "MIT",
 	"bin": "bin/safe-publish-latest",
-	"main": "index.js",
+	"main": "getLatestError.js",
 	"scripts": {
 		"pretest": "npm run --silent lint",
 		"test": "npm run --silent tests-only",

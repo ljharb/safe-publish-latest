@@ -1,5 +1,12 @@
 {
 	"root": true,
 
-	"extends": "@ljharb"
+	"extends": "@ljharb",
+
+	"rules": {
+		"max-params": [2, 4],
+		"max-statements": [2, 14],
+		"no-magic-numbers": [2, { "ignore": [0] }],
+		"operator-linebreak": [2, "none", { "overrides": { "?": "before", ":": "before" } }]
+	}
 }

@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var options = require('yargs')
+	.help().alias('help', 'h')
+	.version(require('../package.json').version).alias('version', 'v')
+	.strict()
+	.wrap(null)
+	.argv;
+
+var inPublish = require('in-publish').inPublish();
+var inInstall = require('in-publish').inInstall();
+
+if (!inInstall && !inPublish) {
+	console.warn('Detected non-install and non-publish: exiting.');
+}
+if (!inPublish) {
+	process.exit(0);
+}
+
+var path = require('path');
+
+var pkg = require(path.join(process.cwd(), 'package.json'));
+var name = pkg.name;
+if (!name) {
+	console.error('Error: package name is required');
+	process.exit(1);
+}
+
+var version = pkg.version;
+var semver = require('semver');
+if (!semver.valid(version)) {
+	console.error('Error: package version "' + version + '" is invalid.');
+	process.exit(2);
+}
+
+var getLatestError = require('../getLatestError');
+getLatestError(name, version, options, function (errors, messages) {
+	if (!errors) {
+		console.log([].concat(messages, 'Publish away!').join('\n'));
+		process.exit(0);
+	}
+	console.error(errors.join('\n'));
+	process.exit(3);
+});
