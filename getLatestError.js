@@ -5,9 +5,8 @@ var semver = require('semver');
 var format = require('util').format;
 var getTag = require('./getTag');
 
-var regex = /-/g;
 var isPrerelease = function (v) {
-	return regex.test(v);
+	return semver.prerelease(v) !== null;
 };
 var isNotPrerelease = function (v) {
 	return !isPrerelease(v);
