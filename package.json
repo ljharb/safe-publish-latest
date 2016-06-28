@@ -46,9 +46,9 @@
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^5.0.0",
-		"eslint": "^2.13.0",
+		"eslint": "^2.13.1",
 		"mock-env": "^0.1.3",
-		"nsp": "^2.4.0",
+		"nsp": "^2.5.0",
 		"tape": "^4.6.0"
 	},
 	"engines": {
