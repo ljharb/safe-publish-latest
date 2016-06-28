@@ -1,0 +1,55 @@
+{
+	"name": "safe-publish-latest",
+	"version": "0.0.0",
+	"author": "Jordan Harband",
+	"contributors": [
+		{
+			"name": "Jordan Harband",
+			"email": "ljharb@gmail.com",
+			"url": "http://ljharb.codes"
+		}
+	],
+	"description": "Ensure that when you `npm publish`, the \"latest\" tag is only set for the truly latest version.",
+	"license": "MIT",
+	"bin": "bin/safe-publish-latest",
+	"main": "index.js",
+	"scripts": {
+		"pretest": "npm run --silent lint",
+		"test": "npm run --silent tests-only",
+		"posttest": "npm run --silent security",
+		"tests-only": "Echo \"Error: no test specified\" && exit 1",
+		"lint": "npm run --silent eslint",
+		"eslint": "eslint *.js test/*.js",
+		"security": "nsp check"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/ljharb/safe-publish-latest.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ljharb/safe-publish-latest/issues"
+	},
+	"keywords": [
+		"publish",
+		"latest",
+		"npm",
+		"dist-tag",
+		"tag",
+		"safe",
+		"prepublish"
+	],
+	"dependencies": {
+		"in-publish": "^2.0.0",
+		"npm-package-versions": "^1.0.0",
+		"semver": "^5.1.1",
+		"yargs": "^4.7.1"
+	},
+	"devDependencies": {
+		"@ljharb/eslint-config": "^5.0.0",
+		"eslint": "^2.13.0",
+		"nsp": "^2.4.0"
+	},
+	"engines": {
+		"node": ">= 0.10"
+	}
+}
