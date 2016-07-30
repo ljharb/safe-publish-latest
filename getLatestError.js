@@ -1,6 +1,6 @@
 'use strict';
 
-var packageVersions = require('npm-package-versions');
+var exec = require('child_process').exec;
 var semver = require('semver');
 var format = require('util').format;
 var getTag = require('./getTag');
@@ -19,11 +19,21 @@ module.exports = function getLatestError(name, version, options, callback) {
 	if (getTag() !== 'latest') {
 		return callback(null, 'Non-latest dist-tag detected.');
 	}
-	return packageVersions(name, function (err, allVersions) {
+
+	return exec('npm info ' + name + ' versions --json', function (err, json) {
 		if (err) {
 			return callback([
 				'Error fetching package versions:',
 				err
+			]);
+		}
+		var allVersions;
+		try {
+			allVersions = JSON.parse(json);
+		} catch (e) {
+			return callback([
+				'Error parsing JSON from npm',
+				e
 			]);
 		}
 

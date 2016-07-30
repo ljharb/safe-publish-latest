@@ -40,7 +40,6 @@
 	],
 	"dependencies": {
 		"in-publish": "^2.0.0",
-		"npm-package-versions": "^1.0.0",
 		"semver": "^5.2.0",
 		"yargs": "^4.7.1"
 	},
