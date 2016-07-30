@@ -1,6 +1,6 @@
 {
 	"name": "safe-publish-latest",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"author": "Jordan Harband",
 	"contributors": [
 		{
@@ -15,6 +15,7 @@
 	"main": "getLatestError.js",
 	"scripts": {
 		"pretest": "npm run --silent lint",
+		"prepublish": "bin/safe-publish-latest",
 		"test": "npm run --silent tests-only",
 		"posttest": "npm run --silent security",
 		"tests-only": "tape 'test/*'",
