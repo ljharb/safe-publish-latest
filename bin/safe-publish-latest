@@ -3,13 +3,14 @@
 'use strict';
 
 var options = require('yargs')
+	.boolean('force-in-publish').default('force-in-publish', false).describe('force-in-publish', 'force "in publish" check to pass')
 	.help().alias('help', 'h')
 	.version(require('../package.json').version).alias('version', 'v')
 	.strict()
 	.wrap(null)
 	.argv;
 
-var inPublish = require('in-publish').inPublish();
+var inPublish = options['force-in-publish'] || require('in-publish').inPublish();
 var inInstall = require('in-publish').inInstall();
 
 if (!inInstall && !inPublish) {
