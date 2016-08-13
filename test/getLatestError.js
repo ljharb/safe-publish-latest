@@ -41,18 +41,18 @@ test('getLatestError', function (t) {
 
 			st.test('with a later version', function (s2t) {
 				s2t.plan(2);
-				getLatestError('x', '9999.0.0', {}, function (err, result) {
+				getLatestError('def', '9999.0.0', {}, function (err, result) {
 					s2t.error(err, 'there should be no error');
-					s2t.equal(result, 'v9999.0.0 is later than v0.0.5.');
+					s2t.equal(result, 'v9999.0.0 is later than v0.0.8.');
 				});
 			});
 
 			st.test('with an earlier version', function (s2t) {
 				s2t.plan(2);
-				getLatestError('x', '0.0.4', {}, function (err, result) {
+				getLatestError('def', '0.0.5', {}, function (err, result) {
 					s2t.notOk(result, 'no result');
 					s2t.deepEqual(err, [
-						'Attempting to publish v0.0.4 as "latest", but it is not later than v0.0.5.',
+						'Attempting to publish v0.0.5 as "latest", but it is not later than v0.0.8.',
 						'\nPossible Solutions:',
 						'\t1) Provide a dist-tag: `npm publish --tag=backport`, for example',
 						'\t2) Use the very dangerous override: `PUBLISH_LATEST_DANGEROUSLY=true npm publish`'
@@ -62,17 +62,17 @@ test('getLatestError', function (t) {
 
 			st.test('with an existing version', function (s2t) {
 				s2t.plan(2);
-				getLatestError('x', '0.0.5', {}, function (err, result) {
+				getLatestError('def', '0.0.8', {}, function (err, result) {
 					s2t.notOk(result, 'no result');
 					s2t.deepEqual(err, [
-						'Attempting to publish already-published version v0.0.5.'
+						'Attempting to publish already-published version v0.0.8.'
 					]);
 				});
 			});
 
 			st.test('with a later prerelease version', function (s2t) {
 				s2t.plan(2);
-				getLatestError('x', '9999.0.0-prerelease.0', {}, function (err, result) {
+				getLatestError('def', '9999.0.0-prerelease.0', {}, function (err, result) {
 					s2t.notOk(result, 'no result');
 					s2t.deepEqual(err, [
 						'Attempting to publish v9999.0.0-prerelease.0 as "latest", but it is a prerelease version.',
@@ -85,7 +85,7 @@ test('getLatestError', function (t) {
 
 			st.test('with an earlier prerelease version', function (s2t) {
 				s2t.plan(2);
-				getLatestError('x', '0.0.4-prerelease.0', {}, function (err, result) {
+				getLatestError('def', '0.0.4-prerelease.0', {}, function (err, result) {
 					s2t.notOk(result, 'no result');
 					s2t.deepEqual(err, [
 						'Attempting to publish v0.0.4-prerelease.0 as "latest", but it is a prerelease version.',
