@@ -22,6 +22,9 @@ module.exports = function getLatestError(name, version, options, callback) {
 
 	return exec('npm info ' + name + ' versions --json', function (err, json) {
 		if (err) {
+			if (/Registry returned 404/.test(err)) {
+				return callback(null, 'v' + version + ' is the first version published.');
+			}
 			return callback([
 				'Error fetching package versions:',
 				err

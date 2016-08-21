@@ -100,5 +100,14 @@ test('getLatestError', function (t) {
 		}, fakeTag('latest'));
 	});
 
+	t.test('nonexistent but valid package name', function (st) {
+		st.plan(2);
+		getLatestError('abcdef123', '1.0.0', {}, function (err, result) {
+			st.error(err, 'there should be no error');
+			st.equal(result, 'v1.0.0 is the first version published.');
+			st.end();
+		});
+	});
+
 	t.end();
 });

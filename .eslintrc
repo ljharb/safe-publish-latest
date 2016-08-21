@@ -5,8 +5,8 @@
 
 	"rules": {
 		"max-params": [2, 4],
-		"max-statements": [2, 18],
-		"no-magic-numbers": [2, { "ignore": [0] }],
+		"max-statements": [2, 20],
+		"no-magic-numbers": [2, { "ignore": [0, 1, -1] }],
 		"operator-linebreak": [2, "none", { "overrides": { "?": "before", ":": "before" } }]
 	}
 }
