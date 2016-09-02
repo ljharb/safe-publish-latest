@@ -20,7 +20,7 @@ module.exports = function getLatestError(name, version, options, callback) {
 		return callback(null, 'Non-latest dist-tag detected.');
 	}
 
-	return exec('npm info ' + name + ' versions --json', function (err, json) {
+	return exec('npm info ' + name + ' versions --json --loglevel=info', function (err, json) {
 		if (err) {
 			if (/Registry returned 404/.test(err)) {
 				return callback(null, 'v' + version + ' is the first version published.');
