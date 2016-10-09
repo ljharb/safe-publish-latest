@@ -1,3 +1,10 @@
+1.1.1 / 2016-10-09
+==================
+  * [Fix] Ensure `allVersions` is an array, when there’s only one
+  * [Deps] update `yargs`
+  * [Dev Deps] update `eslint`, `nsp`, `tape`
+  * [Tests] up to `node` `v6.6`, `v4.5`; improve test matrix
+
 1.1.0 / 2016-09-19
 ==================
   * [Fix] ensure that the npm loglevel is known for `npm info`
