@@ -32,7 +32,7 @@ module.exports = function getLatestError(name, version, options, callback) {
 		}
 		var allVersions;
 		try {
-			allVersions = JSON.parse(json);
+			allVersions = [].concat(JSON.parse(json));
 		} catch (e) {
 			return callback([
 				'Error parsing JSON from npm',
