@@ -22,7 +22,7 @@ module.exports = function getLatestError(name, version, options, callback) {
 
 	return exec('npm info ' + name + ' versions --json --loglevel=info', function (err, json) {
 		if (err) {
-			if (/Registry returned 404/.test(err)) {
+			if (/^npm ERR! code E404$/m.test(err)) {
 				return callback(null, 'v' + version + ' is the first version published.');
 			}
 			return callback([

@@ -109,5 +109,14 @@ test('getLatestError', function (t) {
 		});
 	});
 
+	t.test('nonexistent but valid scoped package name', function (st) {
+		st.plan(2);
+		getLatestError('@ljharb/abcdef123', '1.0.0', {}, function (err, result) {
+			st.error(err, 'there should be no error');
+			st.equal(result, 'v1.0.0 is the first version published.');
+			st.end();
+		});
+	});
+
 	t.end();
 });
