@@ -53,5 +53,10 @@
 	},
 	"engines": {
 		"node": ">= 0.10"
+	},
+	"greenkeeper": {
+		"ignore": [
+			"yargs"
+		]
 	}
 }
