@@ -19,6 +19,7 @@
 		"test": "npm run --silent tests-only",
 		"posttest": "npm run --silent security",
 		"tests-only": "tape 'test/*'",
+		"prelint": "editorconfig-tools check * bin/* test/*",
 		"lint": "npm run --silent eslint",
 		"eslint": "eslint *.js test/*.js",
 		"security": "nsp check"
@@ -46,6 +47,7 @@
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^11.0.0",
+		"editorconfig-tools": "^0.1.1",
 		"eslint": "^3.19.0",
 		"mock-env": "^0.2.0",
 		"nsp": "^2.6.3",
