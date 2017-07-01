@@ -4,6 +4,8 @@
 	"extends": "@ljharb",
 
 	"rules": {
+		"array-bracket-newline": [2, { "multiline": true, "minItems": 1 }],
+		"array-element-newline": [2, { "multiline": true, "minItems": 2 }],
 		"max-params": [2, 4],
 		"max-statements": [2, 20],
 		"no-magic-numbers": [2, { "ignore": [0, 1, -1] }],

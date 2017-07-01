@@ -46,12 +46,12 @@
 		"yargs": "^7.1.0"
 	},
 	"devDependencies": {
-		"@ljharb/eslint-config": "^11.0.0",
+		"@ljharb/eslint-config": "^12.0.0",
 		"editorconfig-tools": "^0.1.1",
-		"eslint": "^3.19.0",
+		"eslint": "^4.1.1",
 		"mock-env": "^0.2.0",
 		"nsp": "^2.6.3",
-		"tape": "^4.6.3"
+		"tape": "^4.7.0"
 	},
 	"engines": {
 		"node": ">= 0.10"
