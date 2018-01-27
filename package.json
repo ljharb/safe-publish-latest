@@ -42,7 +42,7 @@
 	],
 	"dependencies": {
 		"in-publish": "^2.0.0",
-		"semver": "^5.4.1",
+		"semver": "^5.5.0",
 		"yargs": "^7.1.0"
 	},
 	"devDependencies": {
