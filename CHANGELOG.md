@@ -1,3 +1,12 @@
+1.1.2 / 2018-08-06
+==================
+  * [Fix] ensure packages work on first publish (#11)
+  * [Deps] update `semver`, `yargs`
+  * [Deps] pin yargs to v7, since v8 drops node < 4 compat.
+  * [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `nsp`, `tape`
+  * [Tests] up to `node` `v10.8`, `v9.11`, `v8.11`, `v6.14`, `v4.9`; use `nvm install-latest-npm`
+  * [Tests] add `editorconfig-tools`
+
 1.1.1 / 2016-10-09
 ==================
   * [Fix] Ensure `allVersions` is an array, when there’s only one
