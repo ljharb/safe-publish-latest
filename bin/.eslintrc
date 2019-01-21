@@ -1,0 +1,9 @@
+{
+	"rules": {
+		"dot-notation": [2, { "allowKeywords": true }],
+		"newline-per-chained-call": 0,
+		"no-console": 0,
+		"no-magic-numbers": 1,
+		"no-process-exit": 0,
+	},
+}

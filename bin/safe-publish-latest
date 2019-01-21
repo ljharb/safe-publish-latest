@@ -12,6 +12,7 @@ var options = require('yargs')
 	.wrap(null)
 	.argv;
 
+// eslint-disable-next-line global-require
 var inPublish = options['force-in-publish'] || require('in-publish').inPublish();
 var inInstall = require('in-publish').inInstall();
 
