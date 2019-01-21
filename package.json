@@ -17,11 +17,13 @@
 		"pretest": "npm run --silent lint",
 		"prepublish": "bin/safe-publish-latest",
 		"test": "npm run --silent tests-only",
-		"posttest": "npm run --silent security",
+		"posttest": "npm run audit",
 		"tests-only": "tape 'test/*'",
 		"prelint": "editorconfig-tools check * bin/* test/*",
 		"lint": "eslint bin/* .",
-		"security": "nsp check"
+		"preaudit": "npm install --package-lock --package-lock-only",
+		"audit": "npm audit",
+		"postaudit": "rm package-lock.json"
 	},
 	"repository": {
 		"type": "git",
@@ -49,7 +51,6 @@
 		"editorconfig-tools": "^0.1.1",
 		"eslint": "^5.12.1",
 		"mock-env": "^0.2.0",
-		"nsp": "^3.2.1",
 		"tape": "^4.9.2"
 	},
 	"engines": {
