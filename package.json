@@ -48,11 +48,11 @@
 		"yargs": "^7.1.0"
 	},
 	"devDependencies": {
-		"@ljharb/eslint-config": "^13.1.1",
+		"@ljharb/eslint-config": "^14.0.2",
 		"eclint": "^2.8.1",
-		"eslint": "^5.12.1",
+		"eslint": "^6.1.0",
 		"mock-env": "^0.2.0",
-		"tape": "^4.9.2"
+		"tape": "^4.11.0"
 	},
 	"engines": {
 		"node": ">= 0.10"
