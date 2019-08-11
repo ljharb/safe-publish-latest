@@ -19,7 +19,7 @@
 		"test": "npm run --silent tests-only",
 		"posttest": "npm run audit",
 		"tests-only": "tape 'test/*'",
-		"prelint": "editorconfig-tools check * bin/* test/*",
+		"prelint": "eclint check * bin/* test/*",
 		"lint": "eslint bin/* .",
 		"preaudit": "npm install --package-lock --package-lock-only",
 		"audit": "npm audit",
@@ -49,7 +49,7 @@
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^13.1.1",
-		"editorconfig-tools": "^0.1.1",
+		"eclint": "^2.8.1",
 		"eslint": "^5.12.1",
 		"mock-env": "^0.2.0",
 		"tape": "^4.9.2"
