@@ -1,3 +1,15 @@
+1.1.3 / 2019-08-11
+==================
+  * [Fix] peg `hosted-git-info` to `~2.7` due to breaking change in 2.8
+  * [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `tape`
+  * [meta] create FUNDING.yml
+  * [Deps] update `semver`
+  * [Deps] update `semver`
+  * [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `tape`
+  * [Tests] use `eclint` instead of `editorconfig-tools`
+  * [Tests] use `npx aud` instead of `nsp` or `npm audit` with hoops
+  * [Tests] up to `node` `v12.8`, `v11.15`, `v10.16`, `v6.17`
+
 1.1.2 / 2018-08-06
 ==================
   * [Fix] ensure packages work on first publish (#11)
