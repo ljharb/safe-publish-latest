@@ -11,5 +11,14 @@
 		"max-statements": [2, 20],
 		"no-magic-numbers": [2, { "ignore": [0, 1, -1] }],
 		"operator-linebreak": [2, "none", { "overrides": { "?": "before", ":": "before" } }]
-	}
+	},
+
+	"overrides": [
+		{
+			"files": "test/**",
+			"rules": {
+				"no-magic-numbers": 0,
+			},
+		},
+	],
 }
