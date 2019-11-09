@@ -1,3 +1,11 @@
+1.1.4 / 2019-11-08
+==================
+  * Revert "[Fix] peg `hosted-git-info` to `~2.7` due to breaking change in 2.8"
+  * [Deps] update `semver`
+  * [meta] add `funding` field
+  * [Dev Deps] update `eslint`, `@ljharb/eslint-config`
+  * [Tests] use shared travis-ci configs
+
 1.1.3 / 2019-08-11
 ==================
   * [Fix] peg `hosted-git-info` to `~2.7` due to breaking change in 2.8
