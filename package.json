@@ -20,7 +20,7 @@
 		"pretest": "npm run --silent lint",
 		"prepublish": "bin/safe-publish-latest",
 		"test": "npm run --silent tests-only",
-		"posttest": "npx aud",
+		"posttest": "npx aud --production",
 		"tests-only": "nyc tape 'test/*'",
 		"prelint": "eclint check * bin/* test/*",
 		"lint": "eslint bin/* ."
