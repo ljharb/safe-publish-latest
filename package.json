@@ -21,7 +21,7 @@
 		"prepublish": "bin/safe-publish-latest",
 		"test": "npm run --silent tests-only",
 		"posttest": "npx aud",
-		"tests-only": "tape 'test/*'",
+		"tests-only": "nyc tape 'test/*'",
 		"prelint": "eclint check * bin/* test/*",
 		"lint": "eslint bin/* ."
 	},
@@ -51,6 +51,7 @@
 		"eclint": "^2.8.1",
 		"eslint": "^6.8.0",
 		"mock-env": "^0.2.0",
+		"nyc": "^10.3.2",
 		"tape": "^5.0.0-next.4"
 	},
 	"engines": {
