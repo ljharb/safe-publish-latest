@@ -20,7 +20,7 @@
 		"pretest": "npm run --silent lint",
 		"prepublish": "bin/safe-publish-latest",
 		"test": "npm run --silent tests-only",
-		"posttest": "npx aud --production",
+		"posttest": "aud --production",
 		"tests-only": "nyc tape 'test/*'",
 		"prelint": "eclint check * bin/* test/*",
 		"lint": "eslint bin/* ."
@@ -47,12 +47,13 @@
 		"yargs": "^7.1.0"
 	},
 	"devDependencies": {
-		"@ljharb/eslint-config": "^16.0.0",
+		"@ljharb/eslint-config": "^17.2.0",
+		"aud": "^1.1.3",
 		"eclint": "^2.8.1",
-		"eslint": "^6.8.0",
+		"eslint": "^7.13.0",
 		"mock-env": "^0.2.0",
 		"nyc": "^10.3.2",
-		"tape": "^5.0.0-next.4"
+		"tape": "^5.0.1"
 	},
 	"engines": {
 		"node": ">= 0.10"
