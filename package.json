@@ -18,7 +18,8 @@
 	"main": "getLatestError.js",
 	"scripts": {
 		"pretest": "npm run --silent lint",
-		"prepublish": "bin/safe-publish-latest",
+		"prepublish": "not-in-publish || npm run prepublishOnly",
+		"prepublishOnly": "bin/safe-publish-latest",
 		"test": "npm run --silent tests-only",
 		"posttest": "aud --production",
 		"tests-only": "nyc tape 'test/*'",
