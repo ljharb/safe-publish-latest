@@ -1,3 +1,19 @@
+1.1.5 / 2021-10-13
+==================
+  * [Deps] update `yargs`, `in-publish`, `semver`
+  * [meta] disable audits, due to npm 7 bug not yet fixed
+  * [meta] use `prepublishOnly`, for npm 7+
+  * [actions] update codecov uploader
+  * [actions] use `node/install` instead of `node/run`; use `codecov` action
+  * [actions] add "Allow Edits" workflow
+  * [actions] switch Automatic Rebase workflow to `pull_request_target` event
+  * [actions] add automatic rebasing / merge commit blocking
+  * [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `tape`; add `aud`
+  * [Tests] move node 0.8 to optionals; npm 1 can no longer talk to the registry
+  * [Tests] migrate tests to Github Actions
+  * [Tests] only audit prod deps
+  * [Tests] run `nyc` on all tests
+
 1.1.4 / 2019-11-08
 ==================
   * Revert "[Fix] peg `hosted-git-info` to `~2.7` due to breaking change in 2.8"
