@@ -32,17 +32,17 @@ if (!name) {
 }
 
 const semver = require('semver');
-if (!semver.valid(version)) {
-	console.error(`Error: package version "${version}" is invalid.`);
-	process.exit(2);
-}
-
 const getLatestError = require('../getLatestError');
-getLatestError(name, version, options, (errors, messages) => {
-	if (!errors) {
+
+if (semver.valid(version)) {
+	getLatestError(name, version).then((messages) => {
 		console.log([].concat(messages, 'Publish away!').join('\n'));
 		process.exit(0);
-	}
-	console.error(errors.join('\n'));
-	process.exit(3);
-});
+	}).catch((errors) => {
+		console.error([].concat(errors).join('\n'));
+		process.exitCode = 3;
+	});
+} else {
+	console.error(`Error: package version "${version}" is invalid.`);
+	process.exitCode = 2;
+}

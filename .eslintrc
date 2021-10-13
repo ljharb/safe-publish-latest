@@ -8,9 +8,8 @@
 		"array-element-newline": [2, { "multiline": true, "minItems": 2 }],
 		"func-style": "off",
 		"max-lines-per-function": [2, 115],
-		"max-params": [2, 4],
-		"max-statements": [2, 20],
 		"no-magic-numbers": [2, { "ignore": [0, 1, -1] }],
+		"no-throw-literal": "warn",
 		"operator-linebreak": [2, "none", { "overrides": { "?": "before", ":": "before" } }]
 	},
 
@@ -18,6 +17,7 @@
 		{
 			"files": "test/**",
 			"rules": {
+				"max-lines-per-function": "off",
 				"no-magic-numbers": 0,
 			},
 		},
