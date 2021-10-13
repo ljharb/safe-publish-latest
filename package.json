@@ -48,13 +48,13 @@
 		"yargs": "^7.1.2"
 	},
 	"devDependencies": {
-		"@ljharb/eslint-config": "^17.5.1",
-		"aud": "^1.1.4",
+		"@ljharb/eslint-config": "^18.0.0",
+		"aud": "^1.1.5",
 		"eclint": "^2.8.1",
-		"eslint": "^7.23.0",
+		"eslint": "^7.32.0",
 		"mock-env": "^0.2.0",
 		"nyc": "^10.3.2",
-		"tape": "^5.2.2"
+		"tape": "^5.3.1"
 	},
 	"engines": {
 		"node": ">= 0.10"
