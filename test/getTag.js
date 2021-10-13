@@ -1,23 +1,23 @@
 'use strict';
 
-var test = require('tape');
-var mockEnv = require('mock-env').morph;
+const test = require('tape');
+const mockEnv = require('mock-env').morph;
 
-var getTag = require('../getTag');
-var fakeTag = require('./_fakeTag');
+const getTag = require('../getTag');
+const fakeTag = require('./_fakeTag');
 
-test('getTag', function (t) {
+test('getTag', (t) => {
 	mockEnv(
-		function () { t.equal(getTag(), 'latest', 'empty tag => "latest"'); },
-		fakeTag('')
+		() => { t.equal(getTag(), 'latest', 'empty tag => "latest"'); },
+		fakeTag(''),
 	);
 	mockEnv(
-		function () { t.equal(getTag(), 'foo', 'tag "foo" => "foo"'); },
-		fakeTag('foo')
+		() => { t.equal(getTag(), 'foo', 'tag "foo" => "foo"'); },
+		fakeTag('foo'),
 	);
 	mockEnv(
-		function () { t.equal(getTag(), 'latest', 'tag "latest" => "latest"'); },
-		fakeTag('latest')
+		() => { t.equal(getTag(), 'latest', 'tag "latest" => "latest"'); },
+		fakeTag('latest'),
 	);
 	t.end();
 });

@@ -44,8 +44,8 @@
 	],
 	"dependencies": {
 		"in-publish": "^2.0.1",
-		"semver": "^6.3.0",
-		"yargs": "^7.1.2"
+		"semver": "^7.3.5",
+		"yargs": "^17.2.1"
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^18.0.0",
@@ -53,11 +53,11 @@
 		"eclint": "^2.8.1",
 		"eslint": "^7.32.0",
 		"mock-env": "^0.2.0",
-		"nyc": "^10.3.2",
+		"nyc": "^15.1.0",
 		"tape": "^5.3.1"
 	},
 	"engines": {
-		"node": ">= 0.10"
+		"node": ">= 12"
 	},
 	"greenkeeper": {
 		"ignore": [

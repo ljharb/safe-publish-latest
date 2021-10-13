@@ -2,19 +2,19 @@
 
 'use strict';
 
-var options = require('yargs')
+const options = require('yargs')
 	.boolean('force-in-publish')
 	.default('force-in-publish', false)
 	.describe('force-in-publish', 'force "in publish" check to pass')
-	.help().alias('help', 'h')
-	.version(require('../package.json').version).alias('version', 'v')
+	.help()
+	.version().alias('version', 'v')
 	.strict()
 	.wrap(null)
 	.argv;
 
-// eslint-disable-next-line global-require
-var inPublish = options['force-in-publish'] || require('in-publish').inPublish();
-var inInstall = require('in-publish').inInstall();
+const inPub = require('in-publish');
+const inPublish = options['force-in-publish'] || inPub.inPublish();
+const inInstall = inPub.inInstall();
 
 if (!inInstall && !inPublish) {
 	console.warn('Detected non-install and non-publish: exiting.');
@@ -23,24 +23,22 @@ if (!inPublish) {
 	process.exit(0);
 }
 
-var path = require('path');
+const path = require('path');
 
-var pkg = require(path.join(process.cwd(), 'package.json'));
-var name = pkg.name;
+const { name, version } = require(path.join(process.cwd(), 'package.json'));
 if (!name) {
 	console.error('Error: package name is required');
 	process.exit(1);
 }
 
-var version = pkg.version;
-var semver = require('semver');
+const semver = require('semver');
 if (!semver.valid(version)) {
-	console.error('Error: package version "' + version + '" is invalid.');
+	console.error(`Error: package version "${version}" is invalid.`);
 	process.exit(2);
 }
 
-var getLatestError = require('../getLatestError');
-getLatestError(name, version, options, function (errors, messages) {
+const getLatestError = require('../getLatestError');
+getLatestError(name, version, options, (errors, messages) => {
 	if (!errors) {
 		console.log([].concat(messages, 'Publish away!').join('\n'));
 		process.exit(0);

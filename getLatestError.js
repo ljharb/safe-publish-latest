@@ -1,16 +1,21 @@
 'use strict';
 
-var exec = require('child_process').exec;
-var semver = require('semver');
-var format = require('util').format;
-var getTag = require('./getTag');
+const { exec } = require('child_process');
+const {
+	eq,
+	gtr,
+	maxSatisfying,
+	prerelease,
+} = require('semver');
+const { format } = require('util');
+const getTag = require('./getTag');
 
-var isPrerelease = function (v) {
-	return semver.prerelease(v) !== null;
-};
-var isNotPrerelease = function (v) {
+function isPrerelease(v) {
+	return prerelease(v) !== null;
+}
+function isNotPrerelease(v) {
 	return !isPrerelease(v);
-};
+}
 
 module.exports = function getLatestError(name, version, options, callback) {
 	if (process.env.PUBLISH_LATEST_DANGEROUSLY === 'true') {
@@ -20,49 +25,49 @@ module.exports = function getLatestError(name, version, options, callback) {
 		return callback(null, 'Non-latest dist-tag detected.');
 	}
 
-	return exec('npm info ' + name + ' versions --json --loglevel=info', function (err, json) {
+	return exec(`npm info ${name} versions --json --loglevel=info`, (err, json) => {
 		if (err) {
 			if ((/^npm ERR! code E404$/m).test(err)) {
-				return callback(null, 'v' + version + ' is the first version published.');
+				return callback(null, `v${version} is the first version published.`);
 			}
 			return callback([
 				'Error fetching package versions:',
-				err
+				err,
 			]);
 		}
-		var allVersions;
+		let allVersions;
 		try {
 			allVersions = [].concat(JSON.parse(json));
 		} catch (e) {
 			return callback([
 				'Error parsing JSON from npm',
-				e
+				e,
 			]);
 		}
 
-		var versions = allVersions.filter(isNotPrerelease);
+		const versions = allVersions.filter(isNotPrerelease);
 		if (versions.length === 0) {
 			return callback(null, 'No non-prerelease versions detected.');
 		}
 
-		var max = semver.maxSatisfying(versions, '*');
-		if (semver.eq(version, max)) {
+		const max = maxSatisfying(versions, '*');
+		if (eq(version, max)) {
 			return callback([
-				'Attempting to publish already-published version v' + version + '.'
+				`Attempting to publish already-published version v${version}.`,
 			]);
 		}
 
-		var greater = semver.gtr(version, versions.join('||'));
-		var prerelease = isPrerelease(version);
-		if (!greater || prerelease) {
-			var msg = prerelease
+		const greater = gtr(version, versions.join('||'));
+		const isPre = isPrerelease(version);
+		if (!greater || isPre) {
+			const msg = isPre
 				? format('Attempting to publish v%s as "latest", but it is a prerelease version.', version)
 				: format('Attempting to publish v%s as "latest", but it is not later than v%s.', version, max);
 			return callback([
 				msg,
 				'\nPossible Solutions:',
 				'\t1) Provide a dist-tag: `npm publish --tag=backport`, for example',
-				'\t2) Use the very dangerous override: `PUBLISH_LATEST_DANGEROUSLY=true npm publish`'
+				'\t2) Use the very dangerous override: `PUBLISH_LATEST_DANGEROUSLY=true npm publish`',
 			]);
 		}
 

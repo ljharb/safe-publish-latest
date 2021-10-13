@@ -12,7 +12,7 @@ Ensure that when you `npm publish`, the "latest" tag is only set for the truly l
 
 ## Usage
 
-Add "safe-publish-latest" to your `package.json`'s "prepublish" script.
+Add "safe-publish-latest" to your `package.json`'s "prepublish" script, and install `in-publish`.
 
 It will only activate during an actual `npm publish` - it will silently do nothing during installs, and will error when run directly.
 
@@ -20,7 +20,8 @@ Example `package.json` excerpt with no other prepublish commands:
 ```json
 {
 	"scripts": {
-		"prepublish": "safe-publish-latest"
+		"prepublishOnly": "safe-publish-latest",
+		"prepublish": "not-in-publish || npm run prepublishOnly"
 	}
 }
 ```
@@ -29,7 +30,8 @@ Example `package.json` excerpt with another prepublish command:
 ```json
 {
 	"scripts": {
-		"prepublish": "safe-publish-latest && npm run build"
+		"prepublishOnly": "safe-publish-latest && npm run build",
+		"prepublish": "not-in-publish || npm run prepublishOnly"
 	}
 }
 ```
@@ -39,7 +41,7 @@ Example `package.json` excerpt with another prepublish command:
 Simply clone the repo, `npm install`, and run `npm test`
 
 [1]: https://npmjs.org/package/safe-publish-latest
-[2]: http://versionbadg.es/ljharb/safe-publish-latest.svg
+[2]: https://versionbadg.es/ljharb/safe-publish-latest.svg
 [3]: https://travis-ci.org/ljharb/safe-publish-latest.svg
 [4]: https://travis-ci.org/ljharb/safe-publish-latest
 [5]: https://david-dm.org/ljharb/safe-publish-latest.svg
@@ -47,7 +49,7 @@ Simply clone the repo, `npm install`, and run `npm test`
 [7]: https://david-dm.org/ljharb/safe-publish-latest/dev-status.svg
 [8]: https://david-dm.org/ljharb/safe-publish-latest#info=devDependencies
 [9]: https://nodei.co/npm/safe-publish-latest.png?downloads=true&stars=true
-[license-image]: http://img.shields.io/npm/l/safe-publish-latest.svg
+[license-image]: https://img.shields.io/npm/l/safe-publish-latest.svg
 [license-url]: LICENSE
-[downloads-image]: http://img.shields.io/npm/dm/safe-publish-latest.svg
-[downloads-url]: http://npm-stat.com/charts.html?package=safe-publish-latest
+[downloads-image]: https://img.shields.io/npm/dm/safe-publish-latest.svg
+[downloads-url]: https://npm-stat.com/charts.html?package=safe-publish-latest

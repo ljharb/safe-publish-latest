@@ -1,4 +1,4 @@
-name: 'Tests: node.js (io.js)'
+name: 'Tests: node.js'
 
 on: [pull_request, push]
 
@@ -12,7 +12,7 @@ jobs:
       - uses: ljharb/actions/node/matrix@main
         id: set-matrix
         with:
-          preset: 'iojs'
+          preset: '>=12'
 
   latest:
     needs: [matrix]
@@ -28,7 +28,6 @@ jobs:
         name: 'nvm install ${{ matrix.node-version }} && npm install'
         with:
           node-version: ${{ matrix.node-version }}
-          skip-ls-check: true
       - run: npm run tests-only
       - uses: codecov/codecov-action@v2
 
@@ -48,12 +47,11 @@ jobs:
         name: 'nvm install ${{ matrix.node-version }} && npm install'
         with:
           node-version: ${{ matrix.node-version }}
-          skip-ls-check: true
       - run: npm run tests-only
       - uses: codecov/codecov-action@v2
 
   node:
-    name: 'io.js'
+    name: 'node 12+'
     needs: [latest, minors]
     runs-on: ubuntu-latest
     steps:
