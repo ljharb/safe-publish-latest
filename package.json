@@ -45,7 +45,7 @@
 	"dependencies": {
 		"in-publish": "^2.0.1",
 		"semver": "^6.3.0",
-		"yargs": "^7.1.1"
+		"yargs": "^7.1.2"
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^17.5.1",
