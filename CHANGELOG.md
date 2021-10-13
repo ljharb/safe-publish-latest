@@ -5,31 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v1.1.5](https://github.com/ljharb/safe-publish-latest/compare/v1.1.4...v1.1.5) - 2021-10-13
+## [v2.0.0](https://github.com/ljharb/safe-publish-latest/compare/v1.1.5...v2.0.0) - 2021-10-13
 
 ### Commits
 
-- [Tests] migrate tests to Github Actions [`306a814`](https://github.com/ljharb/safe-publish-latest/commit/306a814b7dc35d29e33c4b62acadd03650e3a7a5)
-- [actions] use `node/install` instead of `node/run`; use `codecov` action [`0b1f0d3`](https://github.com/ljharb/safe-publish-latest/commit/0b1f0d33aedaee733b87dd5188864b203e39fb1b)
-- [meta] do not publish Github Actions workflows [`a2ab827`](https://github.com/ljharb/safe-publish-latest/commit/a2ab8273c32a6f75ee64a8672d284d7cfd05ffc1)
-- [actions] add automatic rebasing / merge commit blocking [`cbd2de7`](https://github.com/ljharb/safe-publish-latest/commit/cbd2de77507c8910702c039c53cba21651f88c37)
-- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `aud`, `tape` [`acf1126`](https://github.com/ljharb/safe-publish-latest/commit/acf1126f940c53fea74dca0d62ae9cedbbe4ab5c)
-- [actions] add "Allow Edits" workflow [`c3ca2a5`](https://github.com/ljharb/safe-publish-latest/commit/c3ca2a5ccff1e633754320a65d1cb034906664fe)
-- [actions] update codecov uploader [`bc1efe2`](https://github.com/ljharb/safe-publish-latest/commit/bc1efe206f1794f48b651f0e3853ada27e16ee66)
-- [Tests] move node 0.8 to optionals; npm 1 can no longer talk to the registry [`d28522c`](https://github.com/ljharb/safe-publish-latest/commit/d28522cf4b4605a02e2b94ea373fbd2cc46432b6)
-- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `tape`; add `aud` [`7e907d3`](https://github.com/ljharb/safe-publish-latest/commit/7e907d3262ca86312e8dca4ffb9fa284588b4492)
-- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `aud`, `tape` [`21f3e68`](https://github.com/ljharb/safe-publish-latest/commit/21f3e68569f29cb417b3e6e250907b0b58c155fa)
-- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `tape` [`4445553`](https://github.com/ljharb/safe-publish-latest/commit/4445553663b96e432546d3b9a0e6d6cdeb7299b2)
-- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `tape` [`d93dc40`](https://github.com/ljharb/safe-publish-latest/commit/d93dc40f9e610aec3b0c05e0963d903c3b4094d8)
-- [meta] use `prepublishOnly`, for npm 7+ [`6b09795`](https://github.com/ljharb/safe-publish-latest/commit/6b0979556b0c42374ca6f8e0d8f42a7835c82fa7)
-- [Tests] run `nyc` on all tests [`4fb3862`](https://github.com/ljharb/safe-publish-latest/commit/4fb3862ef2c3dd1326d949dd252fefd30b76d1c5)
-- [Deps] update `semver` [`b7a2751`](https://github.com/ljharb/safe-publish-latest/commit/b7a2751d6e087a6ebb3dc17d5a2fe8fb31ff755e)
-- [Deps] update `yargs` [`0204f2f`](https://github.com/ljharb/safe-publish-latest/commit/0204f2f906d85fc830f93612b0293ff6f386e267)
-- [meta] disable audits, due to npm 7 bug not yet fixed [`012850c`](https://github.com/ljharb/safe-publish-latest/commit/012850c5de22f5902de02b6a41465f4dbf658a4c)
-- [Deps] update `yargs` [`ed717b7`](https://github.com/ljharb/safe-publish-latest/commit/ed717b7e35af531886e6931b63dec6145f72fda9)
-- [Deps] update `in-publish` [`d539693`](https://github.com/ljharb/safe-publish-latest/commit/d539693a2cf9e00eb63f55ed13be9a503497b5e4)
-- [Tests] only audit prod deps [`2a7c3f8`](https://github.com/ljharb/safe-publish-latest/commit/2a7c3f8c9e3626ad7033b55114ceb47cfa9ec41e)
-- [actions] switch Automatic Rebase workflow to `pull_request_target` event [`b4433a9`](https://github.com/ljharb/safe-publish-latest/commit/b4433a90da55831c669b3d929788dc1484f452de)
+- [Breaking] `getLatestError`: refactor to use Promises [`f44edd4`](https://github.com/ljharb/safe-publish-latest/commit/f44edd4a111254011ec475b2b5ccb6abc120c79e)
+- [Breaking] drop node &lt; 12 [`3a8d144`](https://github.com/ljharb/safe-publish-latest/commit/3a8d144bb4f4f2cd3403c7884ce9833335a6b804)
+- [meta] add `auto-changelog` [`08cf254`](https://github.com/ljharb/safe-publish-latest/commit/08cf25452a35818016e2a1946b07df7dec75e91a)
+- [readme] remove travis badge; add github actions/codecov badges [`48455b3`](https://github.com/ljharb/safe-publish-latest/commit/48455b38ff733c679b379552746626449e2a5b94)
+- [Breaking] add `exports` [`222b068`](https://github.com/ljharb/safe-publish-latest/commit/222b068b45e3c649979445b203e1417d74c744ef)
+- [Breaking] `getLatestError`: remove unused `options` param [`a3f5337`](https://github.com/ljharb/safe-publish-latest/commit/a3f533705deb6f2f69535b43caf88279d121c0af)
+- [meta] editorconfig: ignore more stuff in coverage [`72dfebb`](https://github.com/ljharb/safe-publish-latest/commit/72dfebb780db60747cca3435987a58d9708851bf)
 
 <!-- auto-changelog-above -->
 

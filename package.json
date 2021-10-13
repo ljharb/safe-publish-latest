@@ -1,6 +1,6 @@
 {
 	"name": "safe-publish-latest",
-	"version": "1.1.5",
+	"version": "2.0.0",
 	"author": "Jordan Harband <ljharb@gmail.com>",
 	"funding": {
 		"url": "https://github.com/sponsors/ljharb"
@@ -73,7 +73,7 @@
 		"commitLimit": false,
 		"backfillLimit": false,
 		"hideCredit": true,
-		"startingVersion": "v1.1.5"
+		"startingVersion": "v2.0.0"
 	},
 	"greenkeeper": {
 		"ignore": [
