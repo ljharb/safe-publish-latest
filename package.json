@@ -15,7 +15,11 @@
 	"description": "Ensure that when you `npm publish`, the \"latest\" tag is only set for the truly latest version.",
 	"license": "MIT",
 	"bin": "bin/safe-publish-latest",
-	"main": "getLatestError.js",
+	"main": "./getLatestError.js",
+	"exports": {
+		".": "./getLatestError.js",
+		"./package.json": "./package.json"
+	},
 	"scripts": {
 		"pretest": "npm run --silent lint",
 		"prepublish": "not-in-publish || npm run prepublishOnly",
