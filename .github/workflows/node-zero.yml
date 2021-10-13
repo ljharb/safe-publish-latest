@@ -12,6 +12,7 @@ jobs:
       - uses: ljharb/actions/node/matrix@main
         id: set-matrix
         with:
+          versionsAsRoot: true
           preset: '0.x'
 
   stable:
@@ -20,7 +21,10 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
-      matrix: ${{ fromJson(needs.matrix.outputs.stable) }}
+      matrix:
+        node-version: ${{ fromJson(needs.matrix.outputs.stable) }}
+        exclude:
+          - node-version: 0.8
 
     steps:
       - uses: actions/checkout@v2
@@ -41,7 +45,10 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
-      matrix: ${{ fromJson(needs.matrix.outputs.unstable) }}
+      matrix:
+        node-version: ${{ fromJson(needs.matrix.outputs.unstable) }}
+        include:
+          - node-version: 0.8
 
     steps:
       - uses: actions/checkout@v2
