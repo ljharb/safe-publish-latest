@@ -17,7 +17,7 @@ function isNotPrerelease(v) {
 	return !isPrerelease(v);
 }
 
-module.exports = function getLatestError(name, version, options, callback) {
+module.exports = function getLatestError(name, version, callback) {
 	if (process.env.PUBLISH_LATEST_DANGEROUSLY === 'true') {
 		return callback(null, '$PUBLISH_LATEST_DANGEROUSLY override enabled.');
 	}
