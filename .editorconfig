@@ -26,3 +26,5 @@ max_line_length = off
 indent_style = off
 indent_size = off
 max_line_length = off
+trim_trailing_whitespace = off
+insert_final_newline = off
