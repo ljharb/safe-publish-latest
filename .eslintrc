@@ -1,16 +1,15 @@
 {
 	"root": true,
 
-	"extends": "@ljharb/eslint-config/node/latest",
+	"extends": "@ljharb/eslint-config/node/12",
 
 	"rules": {
-		"array-bracket-newline": [2, { "multiline": true, "minItems": 1 }],
-		"array-element-newline": [2, { "multiline": true, "minItems": 2 }],
+		"array-bracket-newline": ["error", { "multiline": true, "minItems": 1 }],
+		"array-element-newline": ["error", { "multiline": true, "minItems": 2 }],
 		"func-style": "off",
-		"max-lines-per-function": [2, 115],
-		"no-magic-numbers": [2, { "ignore": [0, 1, -1] }],
+		"max-lines-per-function": ["error", 115],
+		"no-magic-numbers": ["error", { "ignore": [0, 1, -1] }],
 		"no-throw-literal": "warn",
-		"operator-linebreak": [2, "none", { "overrides": { "?": "before", ":": "before" } }]
 	},
 
 	"overrides": [
@@ -18,7 +17,7 @@
 			"files": "test/**",
 			"rules": {
 				"max-lines-per-function": "off",
-				"no-magic-numbers": 0,
+				"no-magic-numbers": "off",
 			},
 		},
 	],
