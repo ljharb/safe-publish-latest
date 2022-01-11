@@ -27,8 +27,8 @@
 		"test": "npm run --silent tests-only",
 		"posttest": "aud --production",
 		"tests-only": "nyc tape 'test/*'",
-		"prelint": "eclint check * bin/* test/*",
-		"lint": "eslint bin/* .",
+		"prelint": "eclint check $(git ls-files | xargs find 2> /dev/null | grep -vE 'node_modules|\\.git')",
+		"lint": "eslint --ext=js,mjs bin/* .",
 		"version": "auto-changelog && git add CHANGELOG.md",
 		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
 	},
