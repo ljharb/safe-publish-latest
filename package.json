@@ -54,14 +54,14 @@
 		"yargs": "^17.3.1"
 	},
 	"devDependencies": {
-		"@ljharb/eslint-config": "^19.1.1",
-		"aud": "^2.0.0",
-		"auto-changelog": "^2.3.0",
+		"@ljharb/eslint-config": "^21.0.0",
+		"aud": "^2.0.1",
+		"auto-changelog": "^2.4.0",
 		"eclint": "^2.8.1",
-		"eslint": "^8.6.0",
+		"eslint": "=8.8.0",
 		"mock-env": "^0.2.0",
 		"nyc": "^15.1.0",
-		"tape": "^5.4.0"
+		"tape": "^5.6.1"
 	},
 	"engines": {
 		"node": ">= 12"
